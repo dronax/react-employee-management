@@ -20,13 +20,13 @@ const empReducer = (state = initialState, action) => {
       }
     case "edit":
       console.log("edit",action.payload)
-      let del = state.emp.find((i) => i?.id === action.payload.id);
-      state.emp=[state.emp.map((i) => (i?.id === del.id ? null : i))]
-      console.log(state.emp)
-      return{
+      console.log("Real",action.payload1)
+      let real=action.payload1
+      // state.emp=[state.emp.map((i) => (i === real ? null : i))]
+      return {
         ...state,
-        emp:[...state.emp,action.payload]
-      }
+        emp: state.emp.map((i) => (i === real ? action.payload : i)),
+      };
 
     default:
       return {

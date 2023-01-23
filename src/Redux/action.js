@@ -11,10 +11,11 @@ export const delemp=(data)=>{
         payload:data
     }
 }
-export const editemp=(data)=>{
-    return{
-        type:'edit',
-        payload:data
-    }
+export const editemp=(realdata,data)=>{
+    return {
+      type: "edit",
+      payload:data,
+      payload1:realdata
+    };
 }
 

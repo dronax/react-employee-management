@@ -4,7 +4,6 @@ import { useDispatch, useSelector} from 'react-redux';
 import { useState } from 'react';
 
 const EditEmployee = (props) => {
-  const emp=useSelector((state)=>state?.emp)
     const dispatch=useDispatch()
     const [id, setId] = useState("");
     const [name, setName] = useState("");
@@ -27,8 +26,8 @@ const EditEmployee = (props) => {
           setName("");
           setPhone("");
           setDepartmnet("");
-          dispatch(editemp(data));
-          // props.settrigger(false);
+          dispatch(editemp(props.realdata,data));
+          props.setedit(false);
         } else {
           alert("Fields are Empty");
         }

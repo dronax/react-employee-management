@@ -44,7 +44,7 @@ const Employeelist = ({data}) => {
       </div>
       
     </div>
-    <EditEmployee edit={edit} setedit={setedit}/>
+    <EditEmployee edit={edit} setedit={setedit} realdata={data}/>
     </>
   );
   }
